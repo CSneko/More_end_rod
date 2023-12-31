@@ -1,8 +1,11 @@
  {
    "item.better_end_rod.normal_rod": "普通末地烛",
+   "item.better_end_rod.removal": "取物器",
    "enchantment.better_end_rod.oily": "润滑",
    "message.better_end_rod.normal_rod.stick.success": "§a插入成功!",
    "message.better_end_rod.normal_rod.stick.failure": "§c插入失败!",
+   "message.better_end_rod.normal_rod.removal.success": "§a取出成功!",
+   "message.better_end_rod.normal_rod.removal.failure": "§c取出失败!",
    "itemGroup.better_end_rod.end_rod" : "末地烛"
  }
 

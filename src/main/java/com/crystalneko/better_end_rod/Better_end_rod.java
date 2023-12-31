@@ -3,6 +3,8 @@ package com.crystalneko.better_end_rod;
 import com.crystalneko.better_end_rod.enchantment.oily;
 import com.crystalneko.better_end_rod.toolItems.normalRod;
 import com.crystalneko.better_end_rod.toolItems.normalRodMaterial;
+import com.crystalneko.better_end_rod.toolItems.removal;
+import com.crystalneko.better_end_rod.toolItems.removalMaterial;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.enchantment.Enchantment;
@@ -15,6 +17,7 @@ import net.minecraft.util.Identifier;
 public class Better_end_rod implements ModInitializer{
     //--------------------------------------------------------物品工具----------------------------------------------------
     public static final normalRod NORMAL_ROD = new normalRod(normalRodMaterial.INSTANCE,new Item.Settings().maxCount(1).maxDamage(20)); //普通末地烛
+    public static final removal REMOVAL = new removal(removalMaterial.INSTANCE,new Item.Settings().maxCount(1).maxDamage(30)); //取物器
 
     //--------------------------------------------------------附魔----------------------------------------------------
     public static Enchantment OILY = new oily(); //润滑
@@ -22,6 +25,7 @@ public class Better_end_rod implements ModInitializer{
     public void onInitialize(){
         //-------------------------------------------------------物品工具--------------------------------------------------
         Registry.register(Registries.ITEM,new Identifier("better_end_rod","normal_rod"),NORMAL_ROD); //普通末地烛
+        Registry.register(Registries.ITEM,new Identifier("better_end_rod","removal"),REMOVAL); //取物器
         //-------------------------------------------------------附魔--------------------------------------------------
         Registry.register(Registries.ENCHANTMENT,new Identifier("better_end_rod","oily"),OILY); //润滑
 
@@ -33,6 +37,7 @@ public class Better_end_rod implements ModInitializer{
             .displayName(Text.translatable("itemGroup.better_end_rod.end_rod"))
             .entries((context, entries) -> {
                 entries.add(NORMAL_ROD);
+                entries.add(REMOVAL);
             })
             .build();
 

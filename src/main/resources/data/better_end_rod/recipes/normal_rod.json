@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "pattern": [
+    "E  ",
+    "   ",
+    "   "
+  ],
+  "key": {
+    "E": {
+      "tag": "minecraft:end_rod"
+    }
+  },
+  "result": {
+    "item": "better_end_rod:normal_rod",
+    "count": 1
+  }
+}
+

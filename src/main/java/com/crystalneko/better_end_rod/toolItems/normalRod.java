@@ -46,6 +46,8 @@ public class normalRod extends ToolItem {
                     }
                     player.sendMessage(Text.translatable("message.better_end_rod.normal_rod.stick.failure"), true);
                 }
+            }else {
+               player.sendMessage(Text.translatable("message.better_end_rod.normal_rod.stick.failure"), true);
             }
         }
         return ActionResult.PASS;
