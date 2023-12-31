@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Better_end_rod.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Better_end_rod.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Better_end_rod.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Better_end_rod.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.crystalneko.Better_end_rod.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.crystalneko.Better_end_rod.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.crystalneko.Better_end_rod.test.iml" filepath="$PROJECT_DIR$/.idea/modules/com.crystalneko.Better_end_rod.test.iml" />
+    </modules>
+  </component>
+</project>

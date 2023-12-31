@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "better_end_rod",
+  "version": "${version}",
+  "name": "Better_end_rod",
+  "description": "末地烛史诗级升级",
+  "authors": [
+    "CrystalNeko"
+  ],
+  "contact": {},
+  "license": "GPL-3.0",
+  "icon": "assets/better_end_rod/textures/item/normal_rod.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.crystalneko.better_end_rod.client.Better_end_rodClient"
+    ],
+    "main": [
+      "com.crystalneko.better_end_rod.Better_end_rod"
+    ]
+  },
+  "depends": {
+  }
+}
