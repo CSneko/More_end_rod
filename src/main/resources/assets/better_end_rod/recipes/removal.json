@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "Q Q",
+    "QCQ",
+    " S "
+  ],
+  "key": {
+    "Q": {
+      "tag": "minecraft:quartz"
+    },
+    "C": {
+      "item": "minecraft:clay_ball"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "better_end_rod:removal",
+    "count": 2
+  }
+}
+

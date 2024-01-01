@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.Random;
 
 public class datas {
-    public static Map<PlayerEntity, ItemStack> sticks = new HashMap<>();
+    public static Map<String, ItemStack> sticks = new HashMap<>();
 
     //对玩家进行插入操作,成功返回true,否则返回false
     public static Boolean stick(PlayerEntity player, ItemStack stack, Hand hand, PlayerEntity target){
@@ -23,7 +23,7 @@ public class datas {
         if(isStick(target)){
             return false;
         }else {
-            sticks.put(target,stack);
+            sticks.put(target.getName().getString(),stack);
             player.setStackInHand(hand,ItemStack.EMPTY); //删除玩家手上物品
             return true;
         }
@@ -32,7 +32,7 @@ public class datas {
 
      //判断玩家是否已经被插入了
     public static Boolean isStick(PlayerEntity player){
-        return sticks.containsKey(player);
+        return sticks.containsKey(player.getName().getString());
     }
 
     //取出末地烛,成功返回true,否则返回false
@@ -43,12 +43,14 @@ public class datas {
             return false;
         }else {
             //获取被插入的物品
-            ItemStack stacked = sticks.get(target);
+            ItemStack stacked = sticks.get(target.getName().getString());
             //添加lore
             stacked = setLore(stacked,new String[]{"§7它似乎带有奇怪的味道","§1还是不要继续使用为好"});
             stacked = setNbt(stacked,"used","true");
             //将物品还给玩家
             player.dropStack(stacked);
+            //删除插入
+            sticks.remove(target.getName().getString());
             return true;
         }
     }
