@@ -16,8 +16,8 @@ import net.minecraft.util.Identifier;
 
 public class Better_end_rod implements ModInitializer{
     //--------------------------------------------------------物品工具----------------------------------------------------
-    public static final normalRod NORMAL_ROD = new normalRod(normalRodMaterial.INSTANCE,new Item.Settings().maxCount(1).maxDamage(20)); //普通末地烛
-    public static final removal REMOVAL = new removal(removalMaterial.INSTANCE,new Item.Settings().maxCount(1).maxDamage(30)); //取物器
+    public static final normalRod NORMAL_ROD = new normalRod(normalRodMaterial.INSTANCE,new Item.Settings().maxCount(1).maxDamage(20).maxDamageIfAbsent(20)); //普通末地烛
+    public static final removal REMOVAL = new removal(removalMaterial.INSTANCE,new Item.Settings().maxCount(1).maxDamage(30).maxDamageIfAbsent(30)); //取物器
 
     //--------------------------------------------------------附魔----------------------------------------------------
     public static Enchantment OILY = new oily(); //润滑
@@ -36,8 +36,8 @@ public class Better_end_rod implements ModInitializer{
             .icon(() -> new ItemStack(NORMAL_ROD))
             .displayName(Text.translatable("itemGroup.better_end_rod.end_rod"))
             .entries((context, entries) -> {
-                entries.add(NORMAL_ROD);
                 entries.add(REMOVAL);
+                entries.add(NORMAL_ROD);
             })
             .build();
 

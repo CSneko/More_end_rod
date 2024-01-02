@@ -1,20 +1,19 @@
 package com.crystalneko.better_end_rod;
 
-import com.crystalneko.better_end_rod.enchantment.oily;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.nbt.NbtString;
-import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-import java.util.Random;
 
 public class datas {
-    public static Map<String, ItemStack> sticks = new HashMap<>();
+    public static Map<String, List<ItemStack>> sticks = new HashMap<>();
 
     //对玩家进行插入操作,成功返回true,否则返回false
     public static Boolean stick(PlayerEntity player, ItemStack stack, Hand hand, PlayerEntity target){
@@ -23,7 +22,13 @@ public class datas {
         if(isStick(target)){
             return false;
         }else {
-            sticks.put(target.getName().getString(),stack);
+            //获取玩家被插入的末地烛
+            List<ItemStack> stickeds = sticks.get(target.getName().getString());
+
+            if(stickeds == null){stickeds = new ArrayList<>();}
+
+            stickeds.add(stack);
+            sticks.put(target.getName().getString(),stickeds);
             player.setStackInHand(hand,ItemStack.EMPTY); //删除玩家手上物品
             return true;
         }
@@ -43,14 +48,17 @@ public class datas {
             return false;
         }else {
             //获取被插入的物品
-            ItemStack stacked = sticks.get(target.getName().getString());
+            List<ItemStack> stickeds = sticks.get(target.getName().getString());
+            //获取第一个stack
+            ItemStack stacked = stickeds.get(0);
+            stickeds.remove(stacked);
             //添加lore
             stacked = setLore(stacked,new String[]{"§7它似乎带有奇怪的味道","§1还是不要继续使用为好"});
             stacked = setNbt(stacked,"used","true");
             //将物品还给玩家
             player.dropStack(stacked);
             //删除插入
-            sticks.remove(target.getName().getString());
+            sticks.put(target.getName().getString(),stickeds);
             return true;
         }
     }
