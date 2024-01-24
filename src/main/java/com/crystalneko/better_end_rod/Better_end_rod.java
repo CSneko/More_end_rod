@@ -1,12 +1,16 @@
 package com.crystalneko.better_end_rod;
 
+import com.crystalneko.better_end_rod.commands.command;
 import com.crystalneko.better_end_rod.enchantment.oily;
+import com.crystalneko.better_end_rod.events.PlayerAttack;
 import com.crystalneko.better_end_rod.toolItems.normalRod;
 import com.crystalneko.better_end_rod.toolItems.normalRodMaterial;
 import com.crystalneko.better_end_rod.toolItems.removal;
 import com.crystalneko.better_end_rod.toolItems.removalMaterial;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.impl.event.lifecycle.LifecycleEventsImpl;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -30,6 +34,12 @@ public class Better_end_rod implements ModInitializer{
         Registry.register(Registries.ENCHANTMENT,new Identifier("better_end_rod","oily"),OILY); //润滑
 
         Registry.register(Registries.ITEM_GROUP, new Identifier("better_end_rod", "end_rod"), ITEM_GROUP);//物品组
+
+        new command();
+
+        ServerLifecycleEvents.SERVER_STARTED.register(server -> {
+            new PlayerAttack();
+        });
     }
 
     public static final ItemGroup ITEM_GROUP = FabricItemGroup.builder()

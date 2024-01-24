@@ -24,6 +24,7 @@ dependencies {
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
     //implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: '/media/crystalneko/BA106C158B1B58EF/javatest/mods/ctLibFabric/build/libs', includes: ['ctLibMod-0.0.15.jar'])
 
 }
 
