@@ -1,13 +1,18 @@
 package com.crystalneko.better_end_rod.toolItems;
 
+import com.crystalneko.better_end_rod.Better_end_rod;
 import com.crystalneko.better_end_rod.datas;
 import com.crystalneko.better_end_rod.enchantment.oily;
+import net.minecraft.registry.Registries;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.Identifier;
+
 import java.util.Random;
 
 public class normalRod extends ToolItem {
@@ -48,6 +53,25 @@ public class normalRod extends ToolItem {
             }else {
                player.sendMessage(Text.translatable("message.better_end_rod.normal_rod.stick.failure"), true);
             }
+        }else if (Registries.ENTITY_TYPE.getId(entity.getType()).getPath().equalsIgnoreCase("neko")) {
+            //如果对象是猫娘
+            double successRateUp = 0;
+            //获取润滑附魔
+            int oily_lvl = oily.getLvl(stack);
+            if (oily_lvl != 0) {
+                //添加插入成功几率
+                successRateUp = oily_lvl * 0.05;
+            }
+            double successRate = 0.2 + successRateUp;
+            Random random = new Random();
+            boolean isStick = random.nextDouble() < successRate;
+            if(isStick){
+                player.sendMessage(Text.translatable("message.better_end_rod.normal_rod.stick.success"), true);
+                player.setStackInHand(hand,ItemStack.EMPTY);
+            }else {
+                player.sendMessage(Text.translatable("message.better_end_rod.normal_rod.stick.failure"), true);
+            }
+
         }
         return ActionResult.PASS;
     }
