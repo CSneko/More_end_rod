@@ -41,5 +41,10 @@
       <option name="name" value="LoomLocalMinecraft" />
       <option name="url" value="file:$PROJECT_DIR$/.gradle/loom-cache/minecraftMaven/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="GeckoLib" />
+      <option name="name" value="GeckoLib" />
+      <option name="url" value="https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/" />
+    </remote-repository>
   </component>
 </project>

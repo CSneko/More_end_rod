@@ -3,11 +3,14 @@ package com.crystalneko.better_end_rod.toolItems;
 import com.crystalneko.better_end_rod.Better_end_rod;
 import com.crystalneko.better_end_rod.datas;
 import com.crystalneko.better_end_rod.enchantment.oily;
+import net.minecraft.entity.ai.goal.GoalSelector;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.registry.Registries;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -55,6 +58,9 @@ public class normalRod extends ToolItem {
             }
         }else if (Registries.ENTITY_TYPE.getId(entity.getType()).getPath().equalsIgnoreCase("neko")) {
             //如果对象是猫娘
+            AnimalEntity neko = (AnimalEntity) entity;
+            MinecraftServer server = entity.getServer();
+            //设置成功机率
             double successRateUp = 0;
             //获取润滑附魔
             int oily_lvl = oily.getLvl(stack);
@@ -68,6 +74,13 @@ public class normalRod extends ToolItem {
             if(isStick){
                 player.sendMessage(Text.translatable("message.better_end_rod.normal_rod.stick.success"), true);
                 player.setStackInHand(hand,ItemStack.EMPTY);
+                //受到伤害
+                neko.damage(player.getDamageSources().generic(),3.0F);
+                //添加目标
+                neko.setTarget(player);
+                //设置手中物品
+                neko.setStackInHand(neko.getActiveHand(),stack);
+
             }else {
                 player.sendMessage(Text.translatable("message.better_end_rod.normal_rod.stick.failure"), true);
             }
