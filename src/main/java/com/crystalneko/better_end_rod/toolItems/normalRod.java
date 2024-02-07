@@ -1,20 +1,18 @@
 package com.crystalneko.better_end_rod.toolItems;
 
-import com.crystalneko.better_end_rod.Better_end_rod;
 import com.crystalneko.better_end_rod.datas;
 import com.crystalneko.better_end_rod.enchantment.oily;
-import net.minecraft.entity.ai.goal.GoalSelector;
-import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.registry.Registries;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.*;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ToolItem;
+import net.minecraft.item.ToolMaterial;
+import net.minecraft.registry.Registries;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.Identifier;
 
 import java.util.Random;
 
@@ -59,7 +57,10 @@ public class normalRod extends ToolItem {
         }else if (Registries.ENTITY_TYPE.getId(entity.getType()).getPath().equalsIgnoreCase("neko")) {
             //如果对象是猫娘
             AnimalEntity neko = (AnimalEntity) entity;
-            MinecraftServer server = entity.getServer();
+            //如果是幼体，则取消执行
+            if(neko.isBaby()){
+                return ActionResult.FAIL;
+            }
             //设置成功机率
             double successRateUp = 0;
             //获取润滑附魔
