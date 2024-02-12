@@ -1,4 +1,4 @@
-package com.crystalneko.better_end_rod.events;
+package org.cneko.better_end_rod.events;
 
 
 public class PlayerAttack {

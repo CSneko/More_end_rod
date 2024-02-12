@@ -1,6 +1,6 @@
-package com.crystalneko.better_end_rod.enchantment;
+package org.cneko.better_end_rod.enchantment;
 
-import com.crystalneko.better_end_rod.Better_end_rod;
+import org.cneko.better_end_rod.Better_end_rod;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnchantmentTarget;

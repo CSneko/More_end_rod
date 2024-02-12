@@ -1,7 +1,7 @@
-package com.crystalneko.better_end_rod.toolItems;
+package org.cneko.better_end_rod.toolItems;
 
-import com.crystalneko.better_end_rod.datas;
-import com.crystalneko.better_end_rod.enchantment.oily;
+import org.cneko.better_end_rod.datas;
+import org.cneko.better_end_rod.enchantment.oily;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -9,7 +9,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.registry.Registries;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;

@@ -1,4 +1,4 @@
-package com.crystalneko.better_end_rod.commands;
+package org.cneko.better_end_rod.commands;
 
 import com.mojang.brigadier.context.CommandContext;
 import net.minecraft.server.command.ServerCommandSource;

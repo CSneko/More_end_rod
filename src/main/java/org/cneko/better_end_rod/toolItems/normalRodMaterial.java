@@ -1,14 +1,14 @@
-package com.crystalneko.better_end_rod.toolItems;
+package org.cneko.better_end_rod.toolItems;
 
 import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
-public class removalMaterial implements ToolMaterial {
-    public static removalMaterial INSTANCE = new removalMaterial();
+public class normalRodMaterial implements ToolMaterial{
+    public static normalRodMaterial INSTANCE = new normalRodMaterial();
     @Override
     public int getDurability() {
-        return 30;
+        return 20;
     }
 
     @Override
@@ -33,6 +33,6 @@ public class removalMaterial implements ToolMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(Items.QUARTZ);
+        return Ingredient.ofItems(Items.END_ROD);
     }
 }
