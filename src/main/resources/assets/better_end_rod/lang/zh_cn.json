@@ -6,6 +6,15 @@
    "message.better_end_rod.normal_rod.stick.failure": "§c插入失败!",
    "message.better_end_rod.normal_rod.removal.success": "§a取出成功!",
    "message.better_end_rod.normal_rod.removal.failure": "§c取出失败!",
-   "itemGroup.better_end_rod.end_rod" : "末地烛"
+   "itemGroup.better_end_rod.end_rod" : "末地烛",
+    "attack.death.normal_rod": "你被艹死了",
+    "entity.neko.loli.end_rod.use.0": "§a你...想干嘛",
+    "entity.neko.loli.end_rod.use.1": "§a请...不要...这么做",
+    "entity.neko.loli.end_rod.use.2": "§a你好变态",
+    "entity.neko.loli.end_rod.use.3": "§a你再这样...我就",
+    "entity.neko.loli.end_rod.use.sys.3": "§c系统提示:请停止你的变态行为",
+    "entity.neko.loli.end_rod.use.4": "§a快...停下",
+    "entity.neko.loli.end_rod.use.5": "§a最后提醒，你...快停下",
+    "entity.neko.loli.end_rod.use.kick": "§c反思一下你的行为，你个变态"
  }
 

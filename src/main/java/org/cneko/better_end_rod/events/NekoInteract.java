@@ -27,7 +27,7 @@ public class NekoInteract {
     public static void init(){
         NekoEntityEvents.ON_INTERACT.register((neko, player, hand) -> {
             ItemStack itemStack = player.getStackInHand(hand);
-            if(Registries.ITEM.getId(itemStack.getItem()).getPath().equalsIgnoreCase("normal_end")){
+            if(Registries.ITEM.getId(itemStack.getItem()).getPath().equalsIgnoreCase("normal_rod")){
                 interact(neko,player,hand);
             }
             return ActionResult.PASS;

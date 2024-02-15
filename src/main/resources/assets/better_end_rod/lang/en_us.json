@@ -6,5 +6,14 @@
    "message.better_end_rod.normal_rod.stick.failure": "§c插入失败!",
     "message.better_end_rod.normal_rod.removal.success": "§a取出成功!",
     "message.better_end_rod.normal_rod.removal.failure": "§c取出失败!",
-   "itemGroup.better_end_rod.end_rod" : "末地烛"
+   "itemGroup.better_end_rod.end_rod" : "末地烛",
+   "attack.death.normal_rod": "You killed by fucking",
+   "entity.neko.loli.end_rod.use.0": "§aWhat do you...want to do",
+   "entity.neko.loli.end_rod.use.1": "§aPlease...don't...do this",
+   "entity.neko.loli.end_rod.use.2": "§aYou are so perverted",
+   "entity.neko.loli.end_rod.use.3": "§aIf you keep doing this...I will",
+   "entity.neko.loli.end_rod.use.sys.3": "§cSystem prompt: Please stop your perverted behavior",
+   "entity.neko.loli.end_rod.use.4": "§aQuick...stop",
+   "entity.neko.loli.end_rod.use.5": "§aLast reminder, you...stop",
+   "entity.neko.loli.end_rod.use.kick": "§cReflect on your behavior, heitai!"
  }

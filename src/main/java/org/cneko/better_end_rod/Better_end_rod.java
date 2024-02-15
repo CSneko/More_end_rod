@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.*;
 import org.cneko.better_end_rod.commands.command;
 import org.cneko.better_end_rod.enchantment.oily;
+import org.cneko.better_end_rod.events.NekoInteract;
 import org.cneko.better_end_rod.events.PlayerAttack;
 import org.cneko.better_end_rod.fluid.WhiteFluid;
 import org.cneko.better_end_rod.toolItems.normalRod;
@@ -55,6 +56,7 @@ public class Better_end_rod implements ModInitializer{
         new command();
 
         ServerLifecycleEvents.SERVER_STARTED.register(server -> {
+            NekoInteract.init();
             new PlayerAttack();
         });
     }
