@@ -1,5 +1,6 @@
  {
    "item.better_end_rod.normal_rod": "普通末地烛",
+   "item.better_end_rod.super_rod": "超级末地烛",
    "item.better_end_rod.removal": "取物器",
    "enchantment.better_end_rod.oily": "润滑",
    "message.better_end_rod.normal_rod.stick.success": "§a插入成功!",

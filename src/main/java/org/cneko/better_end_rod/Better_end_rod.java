@@ -7,10 +7,7 @@ import org.cneko.better_end_rod.enchantment.oily;
 import org.cneko.better_end_rod.events.NekoInteract;
 import org.cneko.better_end_rod.events.PlayerAttack;
 import org.cneko.better_end_rod.fluid.WhiteFluid;
-import org.cneko.better_end_rod.toolItems.normalRod;
-import org.cneko.better_end_rod.toolItems.normalRodMaterial;
-import org.cneko.better_end_rod.toolItems.removal;
-import org.cneko.better_end_rod.toolItems.removalMaterial;
+import org.cneko.better_end_rod.toolItems.*;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
@@ -24,6 +21,7 @@ import net.minecraft.util.Identifier;
 public class Better_end_rod implements ModInitializer{
     //--------------------------------------------------------物品工具----------------------------------------------------
     public static final normalRod NORMAL_ROD = new normalRod(normalRodMaterial.INSTANCE,new Item.Settings().maxCount(1).maxDamage(20).maxDamageIfAbsent(20)); //普通末地烛
+    public static final SuperRod SUPER_ROD = new SuperRod(SuperRodMaterial.INSTANCE,new Item.Settings().maxCount(1).maxDamage(50).maxDamageIfAbsent(50)); //超级末地烛
     public static final removal REMOVAL = new removal(removalMaterial.INSTANCE,new Item.Settings().maxCount(1).maxDamage(30).maxDamageIfAbsent(30)); //取物器
     //-----------------------------------------------------------流体----------------------------------------------------
     public static BucketItem WHITE_FLUID_BUCKET;
@@ -41,6 +39,7 @@ public class Better_end_rod implements ModInitializer{
         toNekoInstalled = FabricLoader.getInstance().isModLoaded("toneko");
         //-------------------------------------------------------物品工具--------------------------------------------------
         Registry.register(Registries.ITEM,new Identifier("better_end_rod","normal_rod"),NORMAL_ROD); //普通末地烛
+        Registry.register(Registries.ITEM,new Identifier("better_end_rod","super_rod"),SUPER_ROD); //超级末地烛
         Registry.register(Registries.ITEM,new Identifier("better_end_rod","removal"),REMOVAL); //取物器
         //-------------------------------------------------------流体--------------------------------------------------
         FLOWING_WHITE_FLUID = Registry.register(Registries.FLUID, new Identifier("better_end_rod", "flowing_white_fluid"), new WhiteFluid.Flowing());
@@ -56,8 +55,10 @@ public class Better_end_rod implements ModInitializer{
         new command();
 
         ServerLifecycleEvents.SERVER_STARTED.register(server -> {
-            NekoInteract.init();
-            new PlayerAttack();
+            if(toNekoInstalled) {
+                NekoInteract.init();
+            }
+            PlayerAttack.init();
         });
     }
 
@@ -66,6 +67,7 @@ public class Better_end_rod implements ModInitializer{
             .displayName(Text.translatable("itemGroup.better_end_rod.end_rod"))
             .entries((context, entries) -> {
                 entries.add(REMOVAL);
+                entries.add(SUPER_ROD);
                 entries.add(NORMAL_ROD);
             })
             .build();
