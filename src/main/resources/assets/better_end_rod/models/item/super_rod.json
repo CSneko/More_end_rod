@@ -64,8 +64,20 @@
 	],
 	"display": {
 		"thirdperson_righthand": {
-			"translation": [6.5, 0, 0],
-			"scale": [0.5, 0.5, 0.5]
+			"translation": [9, 11.75, 5.5]
+		},
+		"thirdperson_lefthand": {
+			"translation": [-6, 11.5, 3.25]
+		},
+		"firstperson_righthand": {
+			"translation": [7.75, 0, 0]
+		},
+		"gui": {
+			"translation": [3.75, 0, 0],
+			"scale": [0.6, 0.6, 0.6]
+		},
+		"fixed": {
+			"translation": [6.25, 0, 0]
 		}
 	},
 	"groups": [

@@ -7,6 +7,7 @@
    "message.better_end_rod.normal_rod.stick.failure": "§c stick failure!",
     "message.better_end_rod.normal_rod.removal.success": "§a removal successful!",
     "message.better_end_rod.normal_rod.removal.failure": "§c removal failure!",
+   "message.better_end_rod.super_rod.stick.big": "§c It's too...too big!",
    "itemGroup.better_end_rod.end_rod" : "end rods",
    "attack.death.normal_rod": "You killed by fucking",
    "entity.neko.loli.end_rod.use.0": "§aWhat do you...want to do",

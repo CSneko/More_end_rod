@@ -7,6 +7,7 @@
    "message.better_end_rod.normal_rod.stick.failure": "§c插入失败!",
    "message.better_end_rod.normal_rod.removal.success": "§a取出成功!",
    "message.better_end_rod.normal_rod.removal.failure": "§c取出失败!",
+   "message.better_end_rod.super_rod.stick.big": "§c太...太大了!",
    "itemGroup.better_end_rod.end_rod" : "末地烛",
     "attack.death.normal_rod": "你被艹死了",
     "entity.neko.loli.end_rod.use.0": "§a你...想干嘛",
