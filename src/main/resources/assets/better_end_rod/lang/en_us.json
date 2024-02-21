@@ -1,7 +1,9 @@
  {
    "item.better_end_rod.normal_rod": "normal end rod",
    "item.better_end_rod.super_rod": "super end rod",
+   "item.better_end_rod.electric_rod": "redstone end rod",
     "item.better_end_rod.removal": "removal",
+   "effect.better_end_rod.orgasm": "orgasm",
    "enchantment.better_end_rod.oily": "oily",
    "message.better_end_rod.normal_rod.stick.success": "§a stick successful!",
    "message.better_end_rod.normal_rod.stick.failure": "§c stick failure!",

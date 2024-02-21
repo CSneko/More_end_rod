@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    "QCQ",
+    " S "
+  ],
+  "key": {
+    "Q": {
+      "tag": "minecraft:milk_bucket"
+    },
+    "C": {
+      "item": "better_end_rod:normal_rod"
+    },
+    "S": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "item": "better_end_rod:electric_rod",
+    "count": 1
+  }
+}
