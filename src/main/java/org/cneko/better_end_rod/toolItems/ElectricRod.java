@@ -30,10 +30,10 @@ public class ElectricRod extends ToolItem {
             // 添加高潮效果
             StatusEffectInstance orgasm = new StatusEffectInstance(ORGASM,300,1);
             player.addStatusEffect(orgasm);
-            // 1/100的概率发送文本
-            if(new java.util.Random().nextInt(100) == 0){
+            // 1/300的概率发送文本
+            if(new java.util.Random().nextInt(300) == 0){
                 // 生成0~5的随机数
-                int i = new java.util.Random().nextInt(5);
+                int i = new java.util.Random().nextInt(6);
                 player.sendMessage(Text.translatable("message.better_end_rod.electric_rod.using."+i));
             }
             // 设置玩家动作
