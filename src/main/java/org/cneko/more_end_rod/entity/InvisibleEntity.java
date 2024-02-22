@@ -1,14 +1,12 @@
-package org.cneko.better_end_rod.entity;
+package org.cneko.more_end_rod.entity;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.mob.MobEntity;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
-import org.cneko.better_end_rod.Better_end_rod;
 
 public class InvisibleEntity extends MobEntity {
 

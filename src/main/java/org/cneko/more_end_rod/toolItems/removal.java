@@ -1,6 +1,6 @@
-package org.cneko.better_end_rod.toolItems;
+package org.cneko.more_end_rod.toolItems;
 
-import org.cneko.better_end_rod.datas;
+import org.cneko.more_end_rod.datas;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -30,7 +30,7 @@ public class removal extends ToolItem {
                 //对玩家执行取出操作
                 if (datas.removal(player,stack,hand,target)) {
                     //取出成功
-                    player.sendMessage(Text.translatable("message.better_end_rod.normal_rod.removal.success"), true);
+                    player.sendMessage(Text.translatable("message.more_end_rod.normal_rod.removal.success"), true);
                 } else {
                     stack.setDamage(stack.getDamage() - 1); //扣除耐久
                     if(stack.getDamage() <= 0){
@@ -38,10 +38,10 @@ public class removal extends ToolItem {
                     }else {
                         player.setStackInHand(hand,stack); //把修改后的物品给予玩家
                     }
-                    player.sendMessage(Text.translatable("message.better_end_rod.normal_rod.removal.failure"), true);
+                    player.sendMessage(Text.translatable("message.more_end_rod.normal_rod.removal.failure"), true);
                 }
             }else {
-                player.sendMessage(Text.translatable("message.better_end_rod.normal_rod.removal.failure"), true);
+                player.sendMessage(Text.translatable("message.more_end_rod.normal_rod.removal.failure"), true);
             }
         }
         return ActionResult.PASS;

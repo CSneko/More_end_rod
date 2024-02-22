@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "better_end_rod:block/white_fluid"
+      "model": "more_end_rod:block/white_fluid"
     }
   }
 }

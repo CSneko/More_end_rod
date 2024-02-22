@@ -1,4 +1,4 @@
-package org.cneko.better_end_rod;
+package org.cneko.more_end_rod;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;

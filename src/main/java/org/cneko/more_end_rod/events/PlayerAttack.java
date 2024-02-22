@@ -1,14 +1,12 @@
-package org.cneko.better_end_rod.events;
+package org.cneko.more_end_rod.events;
 
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
-import net.minecraft.entity.boss.dragon.EnderDragonEntity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
-import org.cneko.better_end_rod.enchantment.oily;
+import org.cneko.more_end_rod.enchantment.oily;
 
 import java.util.Random;
 
@@ -28,12 +26,12 @@ public class PlayerAttack {
                 Random random = new Random();
                 boolean isStick = random.nextDouble() < successRate;
                 if (isStick) {
-                    player.sendMessage(Text.translatable("message.better_end_rod.normal_rod.stick.success"), true);
+                    player.sendMessage(Text.translatable("message.more_end_rod.normal_rod.stick.success"), true);
                     player.setStackInHand(hand, ItemStack.EMPTY);
                     // 掉落龙蛋
                     entity.dropItem(Items.DRAGON_EGG);
                 }else {
-                    player.sendMessage(Text.translatable("message.better_end_rod.normal_rod.stick.failure"), true);
+                    player.sendMessage(Text.translatable("message.more_end_rod.normal_rod.stick.failure"), true);
                 }
             }
             return ActionResult.PASS;

@@ -1,9 +1,8 @@
-package org.cneko.better_end_rod.events;
+package org.cneko.more_end_rod.events;
 
 import com.crystalneko.tonekofabric.api.NekoEntityEvents;
 import com.crystalneko.tonekofabric.entity.nekoEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.Registries;
@@ -16,7 +15,6 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import org.cneko.better_end_rod.Better_end_rod;
 
 import java.util.HashMap;
 import java.util.Map;

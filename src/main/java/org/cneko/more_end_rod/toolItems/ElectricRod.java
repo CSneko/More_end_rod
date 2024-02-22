@@ -1,4 +1,4 @@
-package org.cneko.better_end_rod.toolItems;
+package org.cneko.more_end_rod.toolItems;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityPose;
@@ -13,10 +13,9 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
-import net.minecraft.util.math.random.BaseRandom;
 
 
-import static org.cneko.better_end_rod.Better_end_rod.ORGASM;
+import static org.cneko.more_end_rod.More_end_rod.ORGASM;
 
 public class ElectricRod extends ToolItem {
     public ElectricRod(ToolMaterial material, Settings settings) {
@@ -25,7 +24,7 @@ public class ElectricRod extends ToolItem {
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         super.inventoryTick(stack, world, entity, slot, selected);
-        if(entity instanceof PlayerEntity player && player.getOffHandStack().getItem() == this.asItem()){
+        if(entity instanceof PlayerEntity player && player.getOffHandStack().getItem() == stack.getItem()){
             // 当持有对象是玩家且物品在副手
             // 添加高潮效果
             StatusEffectInstance orgasm = new StatusEffectInstance(ORGASM,300,1);
@@ -34,7 +33,7 @@ public class ElectricRod extends ToolItem {
             if(new java.util.Random().nextInt(300) == 0){
                 // 生成0~5的随机数
                 int i = new java.util.Random().nextInt(6);
-                player.sendMessage(Text.translatable("message.better_end_rod.electric_rod.using."+i));
+                player.sendMessage(Text.translatable("message.more_end_rod.electric_rod.using."+i));
             }
             // 设置玩家动作
             player.setPose(EntityPose.SWIMMING);

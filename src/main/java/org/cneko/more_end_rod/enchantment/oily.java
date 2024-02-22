@@ -1,6 +1,6 @@
-package org.cneko.better_end_rod.enchantment;
+package org.cneko.more_end_rod.enchantment;
 
-import org.cneko.better_end_rod.Better_end_rod;
+import org.cneko.more_end_rod.More_end_rod;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnchantmentTarget;
@@ -36,7 +36,7 @@ public class oily extends Enchantment {
     public static int getLvl(ItemStack stack){
         if(stack.hasEnchantments()){
             //获取润滑附魔
-            Enchantment oily = Better_end_rod.OILY;
+            Enchantment oily = More_end_rod.OILY;
             //获取物品的附魔列表
             NbtList enchantmentsList = stack.getEnchantments();
             for (int i = 0; i < enchantmentsList.size(); i++) {

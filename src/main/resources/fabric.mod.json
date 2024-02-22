@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "better_end_rod",
+  "id": "more_end_rod",
   "version": "${version}",
   "name": "Better_end_rod",
   "description": "末地烛史诗级升级",
@@ -9,14 +9,14 @@
   ],
   "contact": {},
   "license": "GPL-3.0",
-  "icon": "assets/better_end_rod/textures/item/normal_rod.png",
+  "icon": "assets/more_end_rod/textures/item/normal_rod.png",
   "environment": "*",
   "entrypoints": {
     "client": [
-      "org.cneko.better_end_rod.client.Better_end_rodClient"
+      "org.cneko.more_end_rod.client.More_end_rodClient"
     ],
     "main": [
-      "org.cneko.better_end_rod.Better_end_rod"
+      "org.cneko.more_end_rod.More_end_rod"
     ]
   },
   "depends": {

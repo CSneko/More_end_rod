@@ -1,4 +1,4 @@
-package org.cneko.better_end_rod.fluid;
+package org.cneko.more_end_rod.fluid;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -15,28 +15,28 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
-import org.cneko.better_end_rod.Better_end_rod;
+import org.cneko.more_end_rod.More_end_rod;
 
 public abstract class WhiteFluid extends FlowableFluid {
 	@Override
 	public Fluid getStill() {
-		return Better_end_rod.STILL_WHITE_FLUID;
+		return More_end_rod.STILL_WHITE_FLUID;
 	}
 
 	@Override
 	public Fluid getFlowing() {
-		return Better_end_rod.FLOWING_WHITE_FLUID;
+		return More_end_rod.FLOWING_WHITE_FLUID;
 	}
 
 	@Override
 	public Item getBucketItem() {
-		return Better_end_rod.FLOWING_WHITE_FLUID.getBucketItem();
+		return More_end_rod.FLOWING_WHITE_FLUID.getBucketItem();
 	}
 
 	@Override
 	protected BlockState toBlockState(FluidState fluidState) {
 		// getBlockStateLevel 将流体状态的 LEVEL_1_8 转换为流体方块使用的 LEVEL_15
-		return Better_end_rod.WHITE_FLUID.getDefaultState().with(Properties.LEVEL_15, getBlockStateLevel(fluidState));
+		return More_end_rod.WHITE_FLUID.getDefaultState().with(Properties.LEVEL_15, getBlockStateLevel(fluidState));
 	}
 
     /**

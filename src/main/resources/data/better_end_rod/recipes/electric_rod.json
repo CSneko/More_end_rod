@@ -10,14 +10,14 @@
       "tag": "minecraft:milk_bucket"
     },
     "C": {
-      "item": "better_end_rod:normal_rod"
+      "item": "more_end_rod:normal_rod"
     },
     "S": {
       "item": "minecraft:redstone"
     }
   },
   "result": {
-    "item": "better_end_rod:electric_rod",
+    "item": "more_end_rod:electric_rod",
     "count": 1
   }
 }

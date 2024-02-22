@@ -1,4 +1,4 @@
-package org.cneko.better_end_rod.commands;
+package org.cneko.more_end_rod.commands;
 
 import com.mojang.brigadier.arguments.StringArgumentType;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;

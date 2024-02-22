@@ -2,7 +2,7 @@
     	"replace": false,
     	"values":
     	[
-    		"better_end_rod:white_fluid",
-    		"better_end_rod:flowing_white_fluid"
+    		"more_end_rod:white_fluid",
+    		"more_end_rod:flowing_white_fluid"
     	]
     }

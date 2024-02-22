@@ -1,4 +1,4 @@
-package org.cneko.better_end_rod.effects;
+package org.cneko.more_end_rod.effects;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MovementType;
@@ -39,7 +39,7 @@ public class Orgasm extends StatusEffect {
                 timer = time;
                 // 随机播放0~3的音效
                 int sound = random.nextInt(4);
-                world.playSound(player,player.getBlockPos(), SoundEvent.of(new Identifier("better_end_rod","effect.orgasm."+sound)), SoundCategory.VOICE,1,1);
+                world.playSound(player,player.getBlockPos(), SoundEvent.of(new Identifier("more_end_rod","effect.orgasm."+sound)), SoundCategory.VOICE,1,1);
             }
             // 随机移动玩家的位置
             int x = random.nextInt(10) - 5;

@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [128, 128],
 	"textures": {
-		"0": "better_end_rod:item/super_rod",
-		"particle": "better_end_rod:item/super_rod"
+		"0": "more_end_rod:item/super_rod",
+		"particle": "more_end_rod:item/super_rod"
 	},
 	"elements": [
 		{
