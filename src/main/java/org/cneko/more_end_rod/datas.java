@@ -53,8 +53,8 @@ public class datas {
             ItemStack stacked = stickeds.get(0);
             stickeds.remove(stacked);
             //添加lore
-            stacked = setLore(stacked,new String[]{"§7它似乎带有奇怪的味道","§1还是不要继续使用为好"});
-            stacked = setNbt(stacked,"used","true");
+            setLore(stacked, new String[]{"§7它似乎带有奇怪的味道", "§1还是不要继续使用为好"});
+            setNbt(stacked, "used", "true");
             //将物品还给玩家
             player.dropStack(stacked);
             //删除插入

@@ -20,23 +20,23 @@ import org.cneko.more_end_rod.More_end_rod;
 public abstract class WhiteFluid extends FlowableFluid {
 	@Override
 	public Fluid getStill() {
-		return More_end_rod.STILL_WHITE_FLUID;
+		return null;//More_end_rod.STILL_WHITE_FLUID;
 	}
 
 	@Override
 	public Fluid getFlowing() {
-		return More_end_rod.FLOWING_WHITE_FLUID;
+		return null;//More_end_rod.FLOWING_WHITE_FLUID;
 	}
 
 	@Override
 	public Item getBucketItem() {
-		return More_end_rod.FLOWING_WHITE_FLUID.getBucketItem();
+		return null;//More_end_rod.FLOWING_WHITE_FLUID.getBucketItem();
 	}
 
 	@Override
 	protected BlockState toBlockState(FluidState fluidState) {
 		// getBlockStateLevel 将流体状态的 LEVEL_1_8 转换为流体方块使用的 LEVEL_15
-		return More_end_rod.WHITE_FLUID.getDefaultState().with(Properties.LEVEL_15, getBlockStateLevel(fluidState));
+		return null;//More_end_rod.WHITE_FLUID.getDefaultState().with(Properties.LEVEL_15, getBlockStateLevel(fluidState));
 	}
 
     /**

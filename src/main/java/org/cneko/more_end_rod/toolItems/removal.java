@@ -19,9 +19,11 @@ public class removal extends ToolItem {
     }
     @Override
     public ActionResult useOnEntity(ItemStack stack, PlayerEntity player, LivingEntity entity, Hand hand) {
+        if(player.getWorld().isClient()){
+            return ActionResult.PASS;
+        }
         //判断目标是否为玩家
-        if(entity instanceof PlayerEntity){
-            PlayerEntity target = (PlayerEntity) entity;
+        if(entity instanceof PlayerEntity target){
             //取出的概率
             double successRate = 0.3;
             Random random = new Random();
