@@ -3,4 +3,6 @@
 
 加了点...涩涩的东西
 
-该模组要求安装toNeko作为前置
+前置模组：Fabric API
+
+推荐配合[toneko](https;//modrinth.com/mod/tonekomod)一起游玩
