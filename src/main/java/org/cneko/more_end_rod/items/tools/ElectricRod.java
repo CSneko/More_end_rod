@@ -1,7 +1,8 @@
-package org.cneko.more_end_rod.toolItems;
+package org.cneko.more_end_rod.items.tools;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityPose;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -26,11 +27,16 @@ public class ElectricRod extends ToolItem {
         super.inventoryTick(stack, world, entity, slot, selected);
         if(entity instanceof PlayerEntity player && player.getOffHandStack().getItem() == stack.getItem()){
             // 当持有对象是玩家且物品在副手
+            // 如果耐久为0
+            if(stack.getDamage() == stack.getMaxDamage()){
+                //什么都不做
+                return;
+            }
             // 添加高潮效果
             StatusEffectInstance orgasm = new StatusEffectInstance(ORGASM,300,1);
             player.addStatusEffect(orgasm);
-            // 1/300的概率发送文本
-            if(new java.util.Random().nextInt(300) == 0){
+            // 1/400的概率发送文本
+            if(new java.util.Random().nextInt(400) == 0){
                 // 生成0~5的随机数
                 int i = new java.util.Random().nextInt(6);
                 player.sendMessage(Text.translatable("message.more_end_rod.electric_rod.using."+i));
@@ -45,4 +51,5 @@ public class ElectricRod extends ToolItem {
             player.setStackInHand(Hand.OFF_HAND,stack);
         }
     }
+
 }

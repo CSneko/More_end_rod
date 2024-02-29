@@ -1,4 +1,4 @@
-package org.cneko.more_end_rod.toolItems;
+package org.cneko.more_end_rod.items.tools;
 
 import org.cneko.more_end_rod.datas;
 import org.cneko.more_end_rod.enchantment.oily;

@@ -1,4 +1,4 @@
-package org.cneko.more_end_rod.toolItems;
+package org.cneko.more_end_rod.items.tools;
 
 import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;

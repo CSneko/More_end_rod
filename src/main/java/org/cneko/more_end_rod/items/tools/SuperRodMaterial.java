@@ -1,14 +1,15 @@
-package org.cneko.more_end_rod.toolItems;
+package org.cneko.more_end_rod.items.tools;
 
 import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
+import org.cneko.more_end_rod.items.tools.normalRodMaterial;
 
-public class ElectricRodMaterial implements ToolMaterial {
+public class SuperRodMaterial implements ToolMaterial {
     public static normalRodMaterial INSTANCE = new normalRodMaterial();
     @Override
     public int getDurability() {
-        return 2000;
+        return 20;
     }
 
     @Override
@@ -18,7 +19,7 @@ public class ElectricRodMaterial implements ToolMaterial {
 
     @Override
     public float getAttackDamage() {
-        return 3.0F;
+        return 10.0F;
     }
 
     @Override
