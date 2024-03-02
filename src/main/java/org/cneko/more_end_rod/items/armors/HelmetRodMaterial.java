@@ -36,12 +36,12 @@ public class HelmetRodMaterial implements ArmorMaterial {
 
     @Override
     public String getName() {
-        return "HelmetRod";
+        return "helmet_rod";
     }
 
     @Override
     public float getToughness() {
-        return 10;
+        return -1;
     }
 
     @Override

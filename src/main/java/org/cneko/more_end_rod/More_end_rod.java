@@ -81,7 +81,6 @@ public class More_end_rod implements ModInitializer{
                 entries.add(SUPER_ROD);
                 entries.add(ELECTRIC_ROD);
                 entries.add(NORMAL_ROD);
-                entries.add(HELMET_ROD);
             })
             .build();
 

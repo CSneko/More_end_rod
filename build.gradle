@@ -33,7 +33,7 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
     //implementation fileTree(dir: 'libs', include: ['*.jar'])
     //implementation fileTree(dir: '/media/crystalneko/BA106C158B1B58EF/javatest/mods/ctLibFabric/build/libs', includes: ['ctLibMod-0.0.15.jar'])
-    modImplementation fileTree(dir: '/media/crystalneko/BA106C158B1B58EF/javatest/mods/toNekoFabric/build/libs', includes: ['toNeko-0.2.9.jar'])
+    modImplementation fileTree(dir: '/media/crystalneko/BA106C158B1B58EF/javatest/mods/toNekoFabric/build/libs', includes: ['toNeko-0.3.1.jar'])
     modImplementation 'software.bernie.geckolib:geckolib-fabric-1.20.4:4.4.2'
 }
 
