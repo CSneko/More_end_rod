@@ -87,4 +87,10 @@ public class datas {
         stack.setNbt(tag);
         return stack;
     }
+    public static String getNbt(ItemStack stack,String key){
+        //获取nbt
+        NbtCompound tag = stack.getOrCreateNbt();
+        //读取值
+        return tag.getString(key);
+    }
 }

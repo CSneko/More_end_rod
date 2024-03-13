@@ -5,6 +5,7 @@ import net.minecraft.entity.MovementType;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
@@ -43,6 +44,8 @@ public class Orgasm extends StatusEffect {
             int sound = random.nextInt(8);
             world.playSound(entity,entity.getBlockPos(), SoundEvent.of(new Identifier(modId,"effect.orgasm."+sound)), SoundCategory.VOICE,1,1);
         }
+        // 添加爱心效果
+        world.addParticle(ParticleTypes.HEART,entity.getX() + random.nextFloat(2) - 1,entity.getY() + random.nextFloat(1) + 2, entity.getZ() + random.nextFloat(2) - 1,0,2,0);
         // 随机移动玩家的位置
         int x = random.nextInt(10) - 5;
         int z = random.nextInt(10) - 5;

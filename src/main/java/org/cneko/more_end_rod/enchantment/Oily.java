@@ -14,8 +14,8 @@ import net.minecraft.util.Identifier;
 
 import java.util.Map;
 
-public class oily extends Enchantment {
-    public oily() {
+public class Oily extends Enchantment {
+    public Oily() {
         super(Enchantment.Rarity.UNCOMMON, EnchantmentTarget.WEAPON, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
     }
 

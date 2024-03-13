@@ -3,6 +3,7 @@ package org.cneko.more_end_rod.items.tools;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityPose;
 import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolItem;
@@ -13,6 +14,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
+import org.cneko.more_end_rod.enchantment.Fluorescent;
 
 import static org.cneko.more_end_rod.More_end_rod.ORGASM;
 
@@ -33,6 +35,10 @@ public class ElectricRod extends ToolItem {
             // 添加高潮效果
             StatusEffectInstance orgasm = new StatusEffectInstance(ORGASM,300,1);
             player.addStatusEffect(orgasm);
+            if(Fluorescent.getLvl(stack) != 0){
+                // 添加发光效果
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 1000, 1));
+            }
             // 1/400的概率发送文本
             if(new java.util.Random().nextInt(400) == 0){
                 // 生成0~5的随机数

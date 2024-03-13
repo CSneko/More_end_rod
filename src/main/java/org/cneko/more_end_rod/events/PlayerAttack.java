@@ -6,7 +6,7 @@ import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
-import org.cneko.more_end_rod.enchantment.oily;
+import org.cneko.more_end_rod.enchantment.Oily;
 
 import java.util.Random;
 
@@ -17,7 +17,7 @@ public class PlayerAttack {
                 entity.damage(player.getDamageSources().generic(),10.0F);
                 double successRateUp = 0;
                 //获取润滑附魔
-                int oily_lvl = oily.getLvl(player.getStackInHand(hand));
+                int oily_lvl = Oily.getLvl(player.getStackInHand(hand));
                 if (oily_lvl != 0) {
                     //添加插入成功几率
                     successRateUp = oily_lvl * 0.05;

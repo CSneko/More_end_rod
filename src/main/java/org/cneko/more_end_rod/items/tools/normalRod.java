@@ -1,7 +1,11 @@
 package org.cneko.more_end_rod.items.tools;
 
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
+import org.cneko.more_end_rod.More_end_rod;
 import org.cneko.more_end_rod.datas;
-import org.cneko.more_end_rod.enchantment.oily;
+import org.cneko.more_end_rod.enchantment.Fluorescent;
+import org.cneko.more_end_rod.enchantment.Oily;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -24,11 +28,10 @@ public class normalRod extends ToolItem {
     @Override
     public ActionResult useOnEntity(ItemStack stack, PlayerEntity player, LivingEntity entity, Hand hand) {
         //判断目标是否为玩家
-        if(entity instanceof PlayerEntity){
-            PlayerEntity target = (PlayerEntity) entity;
+        if(entity instanceof PlayerEntity target){
             double successRateUp = 0;
             //获取润滑附魔
-            int oily_lvl = oily.getLvl(stack);
+            int oily_lvl = Oily.getLvl(stack);
             if (oily_lvl != 0) {
                 //添加插入成功几率
                 successRateUp = oily_lvl * 0.05;
@@ -40,6 +43,10 @@ public class normalRod extends ToolItem {
                 //对玩家执行插入操作
                 if (datas.stick(player,stack,hand,target)) {
                     //插入成功
+                    if(Fluorescent.getLvl(stack) != 0){
+                        // 添加发光效果
+                        target.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 1000, 1));
+                    }
                     player.sendMessage(Text.translatable("message.more_end_rod.normal_rod.stick.success"), true);
                 } else {
                     stack.setDamage(stack.getDamage() - 1); //扣除耐久
@@ -63,10 +70,15 @@ public class normalRod extends ToolItem {
             //设置成功机率
             double successRateUp = 0;
             //获取润滑附魔
-            int oily_lvl = oily.getLvl(stack);
+            int oily_lvl = Oily.getLvl(stack);
             if (oily_lvl != 0) {
                 //添加插入成功几率
                 successRateUp = oily_lvl * 0.05;
+            }
+            String used = datas.getNbt(stack,"used");
+            if(used!=null && used.equalsIgnoreCase("true")){
+                // 降低插入成功几率
+                successRateUp = successRateUp * 0.5;
             }
             double successRate = 0.2 + successRateUp;
             Random random = new Random();
@@ -80,7 +92,10 @@ public class normalRod extends ToolItem {
                 neko.setTarget(player);
                 //设置手中物品
                 neko.setStackInHand(neko.getActiveHand(),stack);
-
+                if(Fluorescent.getLvl(stack) != 0){
+                    // 添加发光效果
+                    neko.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 1000, 1));
+                }
             }else {
                 player.sendMessage(Text.translatable("message.more_end_rod.normal_rod.stick.failure"), true);
             }

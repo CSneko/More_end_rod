@@ -3,7 +3,8 @@ package org.cneko.more_end_rod;
 import net.minecraft.item.*;
 import org.cneko.more_end_rod.commands.command;
 import org.cneko.more_end_rod.effects.Orgasm;
-import org.cneko.more_end_rod.enchantment.oily;
+import org.cneko.more_end_rod.enchantment.Fluorescent;
+import org.cneko.more_end_rod.enchantment.Oily;
 import org.cneko.more_end_rod.events.NekoEvents;
 import org.cneko.more_end_rod.events.PlayerAttack;
 import net.fabricmc.api.ModInitializer;
@@ -35,10 +36,11 @@ public class More_end_rod implements ModInitializer{
     //public static Block WHITE_FLUID;
 
     //--------------------------------------------------------附魔----------------------------------------------------
-    public static Enchantment OILY = new oily(); //润滑
+    public static Enchantment OILY = new Oily(); //润滑
 
     // ------------------------------------------------------状态效果--------------------------------------------------
     public static final Orgasm ORGASM = new Orgasm();
+    public static final Fluorescent FLUORESCENT = new Fluorescent();
     // ------------------------------------------------------实体------------------------------------------------------
     // public static final EntityType<InvisibleEntity> INVISIBLE_ENTITY = Registry.register(Registries.ENTITY_TYPE, new Identifier(modId,"invisible_entity"), FabricEntityTypeBuilder.create(SpawnGroup.MISC,InvisibleEntity::new).dimensions(EntityDimensions.fixed(0.1F,0.1F)).build());
     public static boolean toNekoInstalled;
@@ -59,6 +61,7 @@ public class More_end_rod implements ModInitializer{
                 //new BucketItem(STILL_WHITE_FLUID, new Item.Settings().recipeRemainder(Items.BUCKET).maxCount(1)));
         //-------------------------------------------------------附魔--------------------------------------------------
         Registry.register(Registries.ENCHANTMENT,new Identifier(modId,"oily"),OILY); //润滑
+        Registry.register(Registries.ENCHANTMENT,new Identifier(modId,"fluorescent"),FLUORESCENT); //荧光
         // ------------------------------------------------------状态效果------------------------------------------------
         Registry.register(Registries.STATUS_EFFECT,new Identifier(modId,"orgasm"),ORGASM); //高潮
 
