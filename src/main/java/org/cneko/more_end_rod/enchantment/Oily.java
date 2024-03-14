@@ -1,5 +1,6 @@
 package org.cneko.more_end_rod.enchantment;
 
+import net.minecraft.item.Item;
 import org.cneko.more_end_rod.More_end_rod;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -32,6 +33,11 @@ public class Oily extends Enchantment {
     @Override
     public int getMaxLevel() {
         return 3;
+    }
+    @Override
+    public boolean isAcceptableItem(ItemStack stack) {
+        Item item = stack.getItem();
+        return item == More_end_rod.NORMAL_ROD || item == More_end_rod.ELECTRIC_ROD || item == More_end_rod.SUPER_ROD || item == More_end_rod.REMOVAL;
     }
     public static int getLvl(ItemStack stack){
         if(stack.hasEnchantments()){
