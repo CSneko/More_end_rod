@@ -37,10 +37,10 @@ public class More_end_rod implements ModInitializer{
 
     //--------------------------------------------------------附魔----------------------------------------------------
     public static Enchantment OILY = new Oily(); //润滑
-
+    public static final Fluorescent FLUORESCENT = new Fluorescent(); // 荧光
     // ------------------------------------------------------状态效果--------------------------------------------------
     public static final Orgasm ORGASM = new Orgasm();
-    public static final Fluorescent FLUORESCENT = new Fluorescent();
+
     // ------------------------------------------------------实体------------------------------------------------------
     // public static final EntityType<InvisibleEntity> INVISIBLE_ENTITY = Registry.register(Registries.ENTITY_TYPE, new Identifier(modId,"invisible_entity"), FabricEntityTypeBuilder.create(SpawnGroup.MISC,InvisibleEntity::new).dimensions(EntityDimensions.fixed(0.1F,0.1F)).build());
     public static boolean toNekoInstalled;
