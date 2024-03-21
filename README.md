@@ -5,4 +5,4 @@
 
 前置模组：Fabric API
 
-推荐配合[toneko](https;//modrinth.com/mod/tonekomod)一起游玩
+推荐配合[toneko](https://modrinth.com/mod/tonekomod)一起游玩
