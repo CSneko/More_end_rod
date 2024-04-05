@@ -40,22 +40,7 @@ public class Oily extends Enchantment {
         return item == More_end_rod.NORMAL_ROD || item == More_end_rod.ELECTRIC_ROD || item == More_end_rod.SUPER_ROD || item == More_end_rod.REMOVAL;
     }
     public static int getLvl(ItemStack stack){
-        if(stack.hasEnchantments()){
-            //获取润滑附魔
-            Enchantment oily = More_end_rod.OILY;
-            //获取物品的附魔列表
-            NbtList enchantmentsList = stack.getEnchantments();
-            for (int i = 0; i < enchantmentsList.size(); i++) {
-                NbtCompound enchantmentTag = enchantmentsList.getCompound(i);
-                Identifier id = Identifier.tryParse(enchantmentTag.getString("id"));
-                int level = enchantmentTag.getInt("lvl");
-                Map<Enchantment, Integer> itemEnchantments = EnchantmentHelper.get(stack);
-                if (itemEnchantments.containsKey(oily)) {
-                    return level;
-                }
-            }
-        }
-        return 0;
+        return EnchantmentHelper.getLevel(More_end_rod.OILY,stack);
     }
 
 

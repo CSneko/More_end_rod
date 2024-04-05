@@ -5,6 +5,7 @@ import org.cneko.more_end_rod.commands.command;
 import org.cneko.more_end_rod.effects.Orgasm;
 import org.cneko.more_end_rod.enchantment.Fluorescent;
 import org.cneko.more_end_rod.enchantment.Oily;
+import org.cneko.more_end_rod.enchantment.Quick;
 import org.cneko.more_end_rod.events.NekoEvents;
 import org.cneko.more_end_rod.events.PlayerAttack;
 import net.fabricmc.api.ModInitializer;
@@ -38,6 +39,7 @@ public class More_end_rod implements ModInitializer{
     //--------------------------------------------------------附魔----------------------------------------------------
     public static Enchantment OILY = new Oily(); //润滑
     public static final Fluorescent FLUORESCENT = new Fluorescent(); // 荧光
+    public static final Enchantment QUICK = new Quick(); // 快速
     // ------------------------------------------------------状态效果--------------------------------------------------
     public static final Orgasm ORGASM = new Orgasm();
 
@@ -62,6 +64,7 @@ public class More_end_rod implements ModInitializer{
         //-------------------------------------------------------附魔--------------------------------------------------
         Registry.register(Registries.ENCHANTMENT,new Identifier(modId,"oily"),OILY); //润滑
         Registry.register(Registries.ENCHANTMENT,new Identifier(modId,"fluorescent"),FLUORESCENT); //荧光
+        Registry.register(Registries.ENCHANTMENT,new Identifier(modId,"quick"),QUICK); //荧光
         // ------------------------------------------------------状态效果------------------------------------------------
         Registry.register(Registries.STATUS_EFFECT,new Identifier(modId,"orgasm"),ORGASM); //高潮
 

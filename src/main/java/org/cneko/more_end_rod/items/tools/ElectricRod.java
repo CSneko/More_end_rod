@@ -15,8 +15,10 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import org.cneko.more_end_rod.enchantment.Fluorescent;
+import org.cneko.more_end_rod.enchantment.Quick;
 
 import static org.cneko.more_end_rod.More_end_rod.ORGASM;
+import static org.cneko.more_end_rod.More_end_rod.QUICK;
 
 public class ElectricRod extends ToolItem {
     public ElectricRod(ToolMaterial material, Settings settings) {
@@ -32,6 +34,15 @@ public class ElectricRod extends ToolItem {
                 //什么都不做
                 return;
             }
+            if(Quick.getLvl(stack) != 0){
+                // 1/400的概率发送文本
+                if(new java.util.Random().nextInt(400) == 0){
+                    // 生成0~5的随机数
+                    int i = new java.util.Random().nextInt(4);
+                    player.sendMessage(Text.translatable("message.more_end_rod.electric_rod.using.quick."+i));
+                }
+                player.damage(player.getDamageSources().generic(), (float) (0.1 * Quick.getLvl(stack)));
+            }
             // 添加高潮效果
             StatusEffectInstance orgasm = new StatusEffectInstance(ORGASM,300,1);
             player.addStatusEffect(orgasm);
@@ -42,7 +53,7 @@ public class ElectricRod extends ToolItem {
             // 1/400的概率发送文本
             if(new java.util.Random().nextInt(400) == 0){
                 // 生成0~5的随机数
-                int i = new java.util.Random().nextInt(6);
+                int i = new java.util.Random().nextInt(10);
                 player.sendMessage(Text.translatable("message.more_end_rod.electric_rod.using."+i));
             }
             // 设置玩家动作
