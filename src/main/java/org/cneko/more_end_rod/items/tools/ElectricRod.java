@@ -6,9 +6,11 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.item.ToolItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
@@ -18,9 +20,8 @@ import org.cneko.more_end_rod.enchantment.Fluorescent;
 import org.cneko.more_end_rod.enchantment.Quick;
 
 import static org.cneko.more_end_rod.More_end_rod.ORGASM;
-import static org.cneko.more_end_rod.More_end_rod.QUICK;
 
-public class ElectricRod extends ToolItem {
+public class ElectricRod extends EndRod {
     public ElectricRod(ToolMaterial material, Settings settings) {
         super(material, settings);
     }
@@ -67,4 +68,36 @@ public class ElectricRod extends ToolItem {
         }
     }
 
+    public static class ElectricRodMaterial implements ToolMaterial {
+        public static NormalRod.normalRodMaterial INSTANCE = new NormalRod.normalRodMaterial();
+        @Override
+        public int getDurability() {
+            return 2000;
+        }
+
+        @Override
+        public float getMiningSpeedMultiplier() {
+            return 3.0F;
+        }
+
+        @Override
+        public float getAttackDamage() {
+            return 3.0F;
+        }
+
+        @Override
+        public int getMiningLevel() {
+            return 1;
+        }
+
+        @Override
+        public int getEnchantability() {
+            return 15;
+        }
+
+        @Override
+        public Ingredient getRepairIngredient() {
+            return Ingredient.ofItems(Items.END_ROD);
+        }
+    }
 }

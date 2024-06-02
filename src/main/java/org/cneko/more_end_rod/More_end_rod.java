@@ -18,18 +18,17 @@ import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.cneko.more_end_rod.items.armors.HelmetRod;
-import org.cneko.more_end_rod.items.armors.HelmetRodMaterial;
 import org.cneko.more_end_rod.items.tools.*;
 
 public class More_end_rod implements ModInitializer{
     public static final String modId = "more_end_rod";
     //--------------------------------------------------------物品----------------------------------------------------
-    public static final normalRod NORMAL_ROD = new normalRod(normalRodMaterial.INSTANCE,new Item.Settings().maxCount(1).maxDamage(20).maxDamageIfAbsent(20)); //普通末地烛
-    public static final ElectricRod ELECTRIC_ROD = new ElectricRod(ElectricRodMaterial.INSTANCE,new Item.Settings().maxCount(1).maxDamage(2000)); //红石末地烛
-    public static final SuperRod SUPER_ROD = new SuperRod(SuperRodMaterial.INSTANCE,new Item.Settings().maxCount(1).maxDamage(50).maxDamageIfAbsent(50)); //超级末地烛
-    public static final removal REMOVAL = new removal(removalMaterial.INSTANCE,new Item.Settings().maxCount(1).maxDamage(30).maxDamageIfAbsent(30)); //取物器
+    public static final NormalRod NORMAL_ROD = new NormalRod(NormalRod.normalRodMaterial.INSTANCE,new Item.Settings().maxCount(1).maxDamage(20).maxDamageIfAbsent(20)); //普通末地烛
+    public static final ElectricRod ELECTRIC_ROD = new ElectricRod(ElectricRod.ElectricRodMaterial.INSTANCE,new Item.Settings().maxCount(1).maxDamage(2000)); //红石末地烛
+    public static final SuperRod SUPER_ROD = new SuperRod(SuperRod.SuperRodMaterial.INSTANCE,new Item.Settings().maxCount(1).maxDamage(50).maxDamageIfAbsent(50)); //超级末地烛
+    public static final Removal REMOVAL = new Removal(Removal.removalMaterial.INSTANCE,new Item.Settings().maxCount(1).maxDamage(30).maxDamageIfAbsent(30)); //取物器
 
-    public static final HelmetRod HELMET_ROD = new HelmetRod(HelmetRodMaterial.INSTANCE, ArmorItem.Type.HELMET,new Item.Settings().maxCount(1).maxDamage(20).maxDamageIfAbsent(20)); //头戴末地烛
+    public static final HelmetRod HELMET_ROD = new HelmetRod(HelmetRod.HelmetRodMaterial.INSTANCE, ArmorItem.Type.HELMET,new Item.Settings().maxCount(1).maxDamage(20).maxDamageIfAbsent(20)); //头戴末地烛
     //-----------------------------------------------------------流体----------------------------------------------------
     //public static BucketItem WHITE_FLUID_BUCKET;
     //public static WhiteFluid.Flowing FLOWING_WHITE_FLUID;

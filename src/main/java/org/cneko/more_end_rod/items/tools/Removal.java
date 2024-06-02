@@ -1,5 +1,7 @@
 package org.cneko.more_end_rod.items.tools;
 
+import net.minecraft.item.Items;
+import net.minecraft.recipe.Ingredient;
 import org.cneko.more_end_rod.datas;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -13,8 +15,8 @@ import net.minecraft.util.Hand;
 import java.util.Random;
 
 
-public class removal extends ToolItem {
-    public removal(ToolMaterial material, Settings settings) {
+public class Removal extends EndRod {
+    public Removal(ToolMaterial material, Settings settings) {
         super(material, settings);
     }
     @Override
@@ -47,5 +49,38 @@ public class removal extends ToolItem {
             }
         }
         return ActionResult.PASS;
+    }
+
+    public static class removalMaterial implements ToolMaterial {
+        public static removalMaterial INSTANCE = new removalMaterial();
+        @Override
+        public int getDurability() {
+            return 30;
+        }
+
+        @Override
+        public float getMiningSpeedMultiplier() {
+            return 3.0F;
+        }
+
+        @Override
+        public float getAttackDamage() {
+            return 3.0F;
+        }
+
+        @Override
+        public int getMiningLevel() {
+            return 1;
+        }
+
+        @Override
+        public int getEnchantability() {
+            return 15;
+        }
+
+        @Override
+        public Ingredient getRepairIngredient() {
+            return Ingredient.ofItems(Items.QUARTZ);
+        }
     }
 }
