@@ -1,17 +1,14 @@
 package org.cneko.more_end_rod;
 
 import net.minecraft.item.*;
-import org.cneko.more_end_rod.commands.command;
 import org.cneko.more_end_rod.effects.Orgasm;
 import org.cneko.more_end_rod.enchantment.Fluorescent;
 import org.cneko.more_end_rod.enchantment.Oily;
 import org.cneko.more_end_rod.enchantment.Quick;
-import org.cneko.more_end_rod.events.NekoEvents;
 import org.cneko.more_end_rod.events.PlayerAttack;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -47,8 +44,6 @@ public class More_end_rod implements ModInitializer{
     public static boolean toNekoInstalled;
     @Override
     public void onInitialize(){
-        //判断是否安装了toNeko
-        toNekoInstalled = FabricLoader.getInstance().isModLoaded("toneko");
         //-------------------------------------------------------物品--------------------------------------------------
         Registry.register(Registries.ITEM,new Identifier(modId,"normal_rod"),NORMAL_ROD); //普通末地烛
         Registry.register(Registries.ITEM,new Identifier(modId,"electric_rod"),ELECTRIC_ROD); //电动末地烛
@@ -69,12 +64,8 @@ public class More_end_rod implements ModInitializer{
 
         Registry.register(Registries.ITEM_GROUP, new Identifier(modId, "end_rod"), ITEM_GROUP);//物品组
 
-        new command();
 
         ServerLifecycleEvents.SERVER_STARTED.register(server -> {
-            if(toNekoInstalled) {
-                NekoEvents.init();
-            }
             PlayerAttack.init();
         });
     }

@@ -39,7 +39,6 @@ public class Orgasm extends StatusEffect {
         long time = System.currentTimeMillis();
         if(time - timer > random.nextInt(3)+3){
             timer = time;
-            // 考虑到会有人对这些音效感到不适，因此请自己添加sounds.json
             // 随机播放0~7的音效
             int sound = random.nextInt(8);
             world.playSound(entity,entity.getBlockPos(), SoundEvent.of(new Identifier(modId,"effect.orgasm."+sound)), SoundCategory.VOICE,1,1);

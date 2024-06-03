@@ -61,46 +61,6 @@ public class NormalRod extends EndRod {
             }else {
                player.sendMessage(Text.translatable("message.more_end_rod.normal_rod.stick.failure"), true);
             }
-        }else if (Registries.ENTITY_TYPE.getId(entity.getType()).getPath().equalsIgnoreCase("neko")) {
-            //如果对象是猫娘
-            AnimalEntity neko = (AnimalEntity) entity;
-            //如果是幼体，则取消执行
-            if(neko.isBaby()){
-                return ActionResult.FAIL;
-            }
-            //设置成功机率
-            double successRateUp = 0;
-            //获取润滑附魔
-            int oily_lvl = Oily.getLvl(stack);
-            if (oily_lvl != 0) {
-                //添加插入成功几率
-                successRateUp = oily_lvl * 0.05;
-            }
-            String used = datas.getNbt(stack,"used");
-            if(used!=null && used.equalsIgnoreCase("true")){
-                // 降低插入成功几率
-                successRateUp = successRateUp * 0.5;
-            }
-            double successRate = 0.2 + successRateUp;
-            Random random = new Random();
-            boolean isStick = random.nextDouble() < successRate;
-            if(isStick){
-                player.sendMessage(Text.translatable("message.more_end_rod.normal_rod.stick.success"), true);
-                player.setStackInHand(hand,ItemStack.EMPTY);
-                //受到伤害
-                neko.damage(player.getDamageSources().generic(),3.0F);
-                //添加目标
-                neko.setTarget(player);
-                //设置手中物品
-                neko.setStackInHand(neko.getActiveHand(),stack);
-                if(Fluorescent.getLvl(stack) != 0){
-                    // 添加发光效果
-                    neko.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 1000, 1));
-                }
-            }else {
-                player.sendMessage(Text.translatable("message.more_end_rod.normal_rod.stick.failure"), true);
-            }
-
         }
         return ActionResult.PASS;
     }

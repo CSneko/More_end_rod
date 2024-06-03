@@ -19,9 +19,8 @@ public class SuperRod extends EndRod {
     }
     @Override
     public ActionResult useOnEntity(ItemStack stack, PlayerEntity player, LivingEntity entity, Hand hand) {
-        Identifier targetId = Registries.ENTITY_TYPE.getId(entity.getType());
-        // 如果目标是猫娘或玩家
-        if(targetId.getPath().equalsIgnoreCase("neko") || entity instanceof PlayerEntity){
+        // 如果目标是或玩家
+        if(entity instanceof PlayerEntity){
             player.sendMessage(Text.translatable("message.more_end_rod.super_rod.stick.big"));
         }
         return super.useOnEntity(stack, player, entity, hand);

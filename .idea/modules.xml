@@ -8,6 +8,8 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.crystalneko.Better_end_rod.test.iml" filepath="$PROJECT_DIR$/.idea/modules/com.crystalneko.Better_end_rod.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mods.Better_end_rod.main.iml" filepath="$PROJECT_DIR$/.idea/modules/mods.Better_end_rod.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mods.Better_end_rod.test.iml" filepath="$PROJECT_DIR$/.idea/modules/mods.Better_end_rod.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/org.cneko.Better_end_rod.main.iml" filepath="$PROJECT_DIR$/.idea/modules/org.cneko.Better_end_rod.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/org.cneko.Better_end_rod.test.iml" filepath="$PROJECT_DIR$/.idea/modules/org.cneko.Better_end_rod.test.iml" />
     </modules>
   </component>
 </project>
