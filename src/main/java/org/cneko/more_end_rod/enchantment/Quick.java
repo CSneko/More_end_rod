@@ -6,7 +6,8 @@ import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import org.cneko.more_end_rod.More_end_rod;
+import org.cneko.more_end_rod.items.tools.EndRod;
+import org.cneko.more_end_rod.types.MEREnchantments;
 
 public class Quick extends Enchantment {
     public Quick() {
@@ -15,7 +16,7 @@ public class Quick extends Enchantment {
     @Override
     public boolean isAcceptableItem(ItemStack stack) {
         Item item = stack.getItem();
-        return item == More_end_rod.NORMAL_ROD || item == More_end_rod.ELECTRIC_ROD || item == More_end_rod.SUPER_ROD || item == More_end_rod.REMOVAL || item == More_end_rod.HELMET_ROD;
+        return item instanceof EndRod;
     }
 
     @Override
@@ -24,6 +25,6 @@ public class Quick extends Enchantment {
     }
 
     public static int getLvl(ItemStack stack){
-        return EnchantmentHelper.getLevel(More_end_rod.QUICK,stack);
+        return EnchantmentHelper.getLevel(MEREnchantments.QUICK,stack);
     }
 }

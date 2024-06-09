@@ -12,6 +12,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.util.Identifier;
+import org.cneko.more_end_rod.items.tools.EndRod;
+import org.cneko.more_end_rod.types.MEREnchantments;
 
 import java.util.Map;
 
@@ -37,10 +39,10 @@ public class Oily extends Enchantment {
     @Override
     public boolean isAcceptableItem(ItemStack stack) {
         Item item = stack.getItem();
-        return item == More_end_rod.NORMAL_ROD || item == More_end_rod.ELECTRIC_ROD || item == More_end_rod.SUPER_ROD || item == More_end_rod.REMOVAL;
+        return item instanceof EndRod;
     }
     public static int getLvl(ItemStack stack){
-        return EnchantmentHelper.getLevel(More_end_rod.OILY,stack);
+        return EnchantmentHelper.getLevel(MEREnchantments.OILY,stack);
     }
 
 

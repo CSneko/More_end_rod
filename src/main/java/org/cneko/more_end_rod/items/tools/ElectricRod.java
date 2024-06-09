@@ -7,7 +7,6 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.item.ToolItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.recipe.Ingredient;
@@ -16,10 +15,11 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
+import org.cneko.more_end_rod.api.EndRodEvents;
 import org.cneko.more_end_rod.enchantment.Fluorescent;
 import org.cneko.more_end_rod.enchantment.Quick;
 
-import static org.cneko.more_end_rod.More_end_rod.ORGASM;
+import static org.cneko.more_end_rod.types.MEREffects.ORGASM;
 
 public class ElectricRod extends EndRod {
     public ElectricRod(ToolMaterial material, Settings settings) {
@@ -64,6 +64,8 @@ public class ElectricRod extends EndRod {
             if(player instanceof ServerPlayerEntity serverPlayer) {
                 stack.damage(1, Random.create(), serverPlayer);
             }
+            // 处理监听事件
+            EndRodEvents.USE_ON_SELF.invoker().useOnSelf(stack,player);
             player.setStackInHand(Hand.OFF_HAND,stack);
         }
     }

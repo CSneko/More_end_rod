@@ -28,6 +28,7 @@ public class NormalRod extends EndRod {
 
     @Override
     public ActionResult useOnEntity(ItemStack stack, PlayerEntity player, LivingEntity entity, Hand hand) {
+        super.useOnEntity(stack, player, entity, hand);
         //判断目标是否为玩家
         if(entity instanceof PlayerEntity target){
             double successRateUp = 0;

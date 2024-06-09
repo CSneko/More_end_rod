@@ -10,6 +10,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import org.cneko.more_end_rod.More_end_rod;
+import org.cneko.more_end_rod.items.tools.EndRod;
+import org.cneko.more_end_rod.types.MEREnchantments;
 
 
 public class Fluorescent extends Enchantment {
@@ -33,9 +35,9 @@ public class Fluorescent extends Enchantment {
     @Override
     public boolean isAcceptableItem(ItemStack stack) {
         Item item = stack.getItem();
-        return item == More_end_rod.NORMAL_ROD || item == More_end_rod.ELECTRIC_ROD || item == More_end_rod.SUPER_ROD || item == More_end_rod.REMOVAL;
+        return item instanceof EndRod;
     }
     public static int getLvl(ItemStack stack){
-        return EnchantmentHelper.getLevel(More_end_rod.FLUORESCENT,stack);
+        return EnchantmentHelper.getLevel(MEREnchantments.FLUORESCENT,stack);
     }
 }
