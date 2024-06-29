@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " C ",
+    "HEH",
+    " L "
+  ],
+  "key": {
+    "E": {
+      "item": "more_end_rod:electric_rod"
+    },
+    "C": {
+      "tag" : "c:advanced_circuits"
+    },
+    "H": {
+      "tag": "c:hv_cables"
+    },
+    "L": {
+      "tag": "c:lithium_ion_batteries"
+    }
+  },
+  "result": {
+    "item": "more_end_rod:industrial_rod",
+    "count": 1
+  }
+}

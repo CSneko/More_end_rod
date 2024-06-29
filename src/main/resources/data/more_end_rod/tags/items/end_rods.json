@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "more_end_rod:electric_rod",
+    "more_end_rod:normal_rod",
+    "more_end_rod:super_rod",
+    "more_end_rod:removal",
+    "more_end_rod:helmet_rod",
+    "more_end_rod:industrial_rod"
+  ]
+}
