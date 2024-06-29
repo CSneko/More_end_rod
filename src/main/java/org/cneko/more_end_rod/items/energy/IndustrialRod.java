@@ -15,14 +15,15 @@ import net.minecraft.world.World;
 import org.cneko.more_end_rod.items.tools.ElectricRod;
 import org.jetbrains.annotations.Nullable;
 import team.reborn.energy.api.EnergyStorage;
+import team.reborn.energy.api.EnergyStorageUtil;
 import team.reborn.energy.api.base.SimpleEnergyItem;
 
 import java.util.List;
 
 public class IndustrialRod extends ElectricRod implements SimpleEnergyItem {
-    public long CAPACITY = 10^5;
-    public static final int MAX_INSERT = 10^5;
-    public static final int MAX_EXTRACT = 10^5;
+    public long CAPACITY = 100000;
+    public static final int MAX_INSERT = 1000;
+    public static final int MAX_EXTRACT = 1000;
     public IndustrialRod() {
         super(IndustrialRodMaterial.INSTANCE, new Settings().maxCount(1));
     }
@@ -50,18 +51,25 @@ public class IndustrialRod extends ElectricRod implements SimpleEnergyItem {
     @Override
     public void damage(ItemStack stack, int amount, Random random, ServerPlayerEntity player) {
         // 将减少耐久改为减少电量
-        EnergyStorage e = EnergyStorage.ITEM.find(stack, ContainerItemContext.ofPlayerHand(player, Hand.OFF_HAND));
-        if (e != null) {
-            this.setStoredEnergy(stack, e.getAmount() - amount* 10L);
-        }
+        //EnergyStorage e = EnergyStorage.ITEM.find(stack, ContainerItemContext.ofPlayerHand(player, Hand.OFF_HAND));
+        //if (e != null) {
+            this.setStoredEnergy(stack, this.getStoredEnergy(stack) - amount* 10L);
+        //}
         // 将剩下的电量设置为显示耐久
-        if (e != null) {
-            stack.setDamage((int)(100 - e.getAmount() / this.getEnergyCapacity(stack)));
-        }
+        //if (e != null) {
+            stack.setDamage(
+                    100-(int)(
+                            (
+                                    (double)this.getStoredEnergy(stack) / (double)this.getEnergyCapacity(stack)
+                            )*100
+                    )
+            );
+        //}
     }
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         try {
+            //EnergyStorage e = EnergyStorage.ITEM.find(stack,ContainerItemContext.withConstant(stack));
             // 获取电量
             long amount = this.getStoredEnergy(stack);
             // 将电量转换为 k 为单位
@@ -72,7 +80,13 @@ public class IndustrialRod extends ElectricRod implements SimpleEnergyItem {
     @Override
     public void setStoredEnergy(ItemStack stack, long amount) {
         SimpleEnergyItem.setStoredEnergyUnchecked(stack, amount);
-        stack.setDamage((int)(100 - amount / this.getEnergyCapacity(stack)));
+        stack.setDamage(
+                100-(int)(
+                        (
+                                (double)this.getStoredEnergy(stack) / (double)this.getEnergyCapacity(stack)
+                        )*100
+                )
+        );
     }
 
 
