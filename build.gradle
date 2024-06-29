@@ -26,7 +26,7 @@ dependencies {
     //implementation fileTree(dir: '/media/crystalneko/BA106C158B1B58EF/javatest/mods/ctLibFabric/build/libs', includes: ['ctLibMod-0.0.15.jar'])
     modImplementation "maven.modrinth:tonekomod:1.0.0-pre"
 
-    include modApi('teamreborn:energy:4.1.0') {
+    include modApi('teamreborn:energy:3.0.0') {
         exclude(group: "net.fabricmc.fabric-api")
     }
 }

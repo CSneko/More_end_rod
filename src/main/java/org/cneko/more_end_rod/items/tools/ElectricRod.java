@@ -18,8 +18,6 @@ import net.minecraft.world.World;
 import org.cneko.more_end_rod.api.EndRodEvents;
 import org.cneko.more_end_rod.enchantment.Fluorescent;
 import org.cneko.more_end_rod.enchantment.Quick;
-import org.jetbrains.annotations.Nullable;
-import team.reborn.energy.api.EnergyStorage;
 
 import static org.cneko.more_end_rod.types.MEREffects.ORGASM;
 
