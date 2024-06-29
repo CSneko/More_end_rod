@@ -20,6 +20,7 @@ public class MERItemGroups {
                 entries.add(SUPER_ROD);
                 entries.add(ELECTRIC_ROD);
                 entries.add(NORMAL_ROD);
+                entries.add(INDUSTRIAL_ROD);
             })
             .build();
 

@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.6-SNAPSHOT'
+    id 'fabric-loom' version '1.7-SNAPSHOT'
     id 'maven-publish'
 }
 
@@ -7,19 +7,6 @@ version = project.mod_version
 group = project.maven_group
 
 repositories {
-    // Add repositories to retrieve artifacts from in here.
-    // You should only use this when depending on other mods because
-    // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
-    // See https://docs.gradle.org/current/userguide/declaring_repositories.html
-    // for more information about repositories.
-    maven {
-        name = 'GeckoLib'
-        url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
-        content {
-            includeGroupByRegex("software\\.bernie.*")
-            includeGroup("com.eliotlash.mclib")
-        }
-    }
     maven {
         name = "Modrinth"
         url = "https://api.modrinth.com/maven"
@@ -37,8 +24,11 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
     //implementation fileTree(dir: 'libs', include: ['*.jar'])
     //implementation fileTree(dir: '/media/crystalneko/BA106C158B1B58EF/javatest/mods/ctLibFabric/build/libs', includes: ['ctLibMod-0.0.15.jar'])
-    modImplementation "maven.modrinth:tonekomod:0.4.1"
-    modImplementation 'software.bernie.geckolib:geckolib-fabric-1.20.4:4.4.2'
+    modImplementation "maven.modrinth:tonekomod:1.0.0-pre"
+
+    include modApi('teamreborn:energy:4.1.0') {
+        exclude(group: "net.fabricmc.fabric-api")
+    }
 }
 
 
