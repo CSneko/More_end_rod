@@ -1,4 +1,6 @@
 # 更多末地烛
+此模组已停更了哦，请查看续作[只是根棍子](https://github.com/CSneko/JustARod/)
+
 支持运行在Fabric 1.20~1.20.4
 
 前置模组：Fabric API
